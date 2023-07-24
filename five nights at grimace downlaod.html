@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Button Example</title>
+</head>
+<body>
+    <h1>Click the button below to download Five Nights At Grimace:</h1>
+    <button id="downloadButton">Download</button>
+
+    <script>
+        // Replace "YOUR_FILE_URL" with the actual URL of the file you want to be downloaded.
+        const fileUrl = 'https://drive.google.com/file/d/13SRtim2Wivpd8cdFk41S59iXspDZ4brv/view?usp=drive_link';
+
+        // Function to trigger the download when the button is clicked.
+        function downloadFile() {
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = 'your_file_name'; // Change 'your_file_name' to the desired name for the downloaded file.
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Attach an event listener to the button that calls the downloadFile function when clicked.
+        document.getElementById('downloadButton').addEventListener('click', downloadFile);
+    </script>
+</body>
+</html>
